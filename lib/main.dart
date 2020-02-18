@@ -60,6 +60,31 @@ class _MyHomePageState extends State<MyHomePage> {
 //THIS CONTROLS THE UI
   @override
   Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Welcome to Flutter',
+      home: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("Background/back.png"), fit: BoxFit.cover)),
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: AppBar(
+            elevation: 0,
+            backgroundColor: Colors.transparent,
+            title: Text('My App'),
+            centerTitle: true,
+            leading: IconButton(
+                icon: Icon(
+                  Icons.list,
+                  color: Colors.white,
+                ),
+                onPressed: () {}),
+          ),
+        ),
+      ),
+    );
+  }
+  /*Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -113,5 +138,5 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
-  }
+  }*/
 }
