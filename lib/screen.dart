@@ -10,15 +10,6 @@ class RegistrationPage extends StatefulWidget {
 }
 
 class _MyRegistrationPageState extends State<RegistrationPage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-
-      _counter++;
-    });
-  }
-
   int _selectedIndex = 0;
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
@@ -60,10 +51,6 @@ class _MyRegistrationPageState extends State<RegistrationPage> {
             Text(
               'You have pushed the button this many times:',
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
           ],
         ),
       ),
@@ -89,7 +76,7 @@ class _MyRegistrationPageState extends State<RegistrationPage> {
 
 
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed:(){},
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),
