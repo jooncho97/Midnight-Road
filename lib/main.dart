@@ -38,36 +38,71 @@ class _MyHomePageState extends State<MyHomePage> {
             image: DecorationImage(
                 image: AssetImage("Background/back.png"), fit: BoxFit.cover)),
         margin: new EdgeInsets.all(0.0),
-        child: new Container(
-          child: new FlatButton(
-            child: new Container(
-              padding: new EdgeInsets.only(
-                left: 25,
-                right: 25,
-                top: 10,
-                bottom: 10,
+      child: new Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+              new Container(
+              child: new FlatButton(
+                child: new Container(
+                  padding: new EdgeInsets.only(
+                    left: 25,
+                    right: 25,
+                    top: 10,
+                    bottom: 10,
+                  ),
+                  decoration: new BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    borderRadius: new BorderRadius.all(
+                    new Radius.elliptical(40.0,50.0)
+                  ),
+                    border: new Border.all(
+                    color: Colors.orangeAccent,
+                    ),
+                  ),
+                    child: new Text('Log In',
+                    style: new TextStyle(fontSize: 20.0, color: Colors.black54),
+                    ),
+                  ),
+                  onPressed:(){
+                  Navigator.push(
+                    context,
+                    new MaterialPageRoute(builder: (context) => new RegistrationPage(title: 'registration page')),
+                  );
+                }),
               ),
-              decoration: new BoxDecoration(
-                shape: BoxShape.rectangle,
-                borderRadius: new BorderRadius.all(
-                  new Radius.elliptical(40.0,50.0)
-                ),
-                border: new Border.all(
-                  color: Colors.orangeAccent,
-                ),
-              ),
-              child: new Text('Create an account',
-                  style: new TextStyle(fontSize: 20.0, color: Colors.white),
-                ),
-              ),
-              onPressed:(){
-                Navigator.push(
-                  context,
-                  new MaterialPageRoute(builder: (context) => new RegistrationPage(title: 'registration page')),
-                );
-              }),
-            )
-          ),
+            new Container(
+              child: new FlatButton(
+                  child: new Container(
+                    padding: new EdgeInsets.only(
+                      left: 25,
+                      right: 25,
+                      top: 10,
+                      bottom: 10,
+                    ),
+                    decoration: new BoxDecoration(
+                      shape: BoxShape.rectangle,
+                      borderRadius: new BorderRadius.all(
+                          new Radius.elliptical(40.0,50.0)
+                      ),
+                      border: new Border.all(
+                        color: Colors.orangeAccent,
+                      ),
+                    ),
+                    child: new Text('Create an Account',
+                      style: new TextStyle(fontSize: 20.0, color: Colors.white),
+                    ),
+                  ),
+                  onPressed:(){
+                    Navigator.push(
+                      context,
+                      new MaterialPageRoute(builder: (context) => new RegistrationPage(title: 'registration page')),
+                    );
+                  }),
+            ),
+            ]
+            ),
+        ),
       );
   }
 }

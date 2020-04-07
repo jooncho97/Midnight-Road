@@ -30,14 +30,28 @@ class MainScreen extends StatelessWidget {
                     Container(
                       decoration: BoxDecoration(
                         border: Border.all(width: 15, color: Colors.black38),
-                        borderRadius: const BorderRadius.all(const Radius.circular(8)),
+                        image: new DecorationImage(
+                          image: new AssetImage("Background/unique.png"),
+                        ),
+                        borderRadius: const BorderRadius.all(
+                            const Radius.circular(8)),
                       ),
-                    padding: const EdgeInsets.all(8),
-                    child: Image(
-                      image: AssetImage("Background/unique.png"),
+                      child: SizedBox(
+                        height: 3.0,
+                        width: 3.0,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          FloatingActionButton(
+                            onPressed:(){},
+                            backgroundColor: Colors.orange,
+                            child: Icon(Icons.add),
+                          ),
+                        ]),
+                      ),
                     ),
-                  ),
-                  Container(
+                   Container(
                     decoration: BoxDecoration(
                       border: Border.all(width: 15, color: Colors.black38),
                       borderRadius: const BorderRadius.all(const Radius.circular(8)),

@@ -10,76 +10,45 @@ class RegistrationPage extends StatefulWidget {
 }
 
 class _MyRegistrationPageState extends State<RegistrationPage> {
-  int _selectedIndex = 0;
-  static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
-  ];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
 //THIS CONTROLS THE UI
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
-
         title: Text(widget.title),
       ),
-      body: Center(
-
-        child: Column(
-
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+      body: Column(
+        //creating an array of children
+        children: <Widget>[
+          //CONTAINER 1
+          Container(
+            //Creating an expanded to scale the widget's size
+            child: Expanded(
+              flex: 2,
+              //creating a child to import images
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(width: 15, color: Colors.black38),
+                  image: new DecorationImage(
+                    image: new AssetImage("Background/singup.png"),
+                  ),
+                  borderRadius: const BorderRadius.all(
+                      const Radius.circular(8)),
+                ),
+              ),
             ),
-          ],
-        ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Home'),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            title: Text('Business'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            title: Text('School'),
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
-      ),
+          //CONTAINER 2
+          Container(
+            child: Expanded(
+              flex: 3,
+              child: Container(
 
 
-      floatingActionButton: FloatingActionButton(
-        onPressed:(){},
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
+                ),
+              ),
+            ),
+          ]),
     );
   }
 }
