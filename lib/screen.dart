@@ -15,6 +15,7 @@ class _MyRegistrationPageState extends State<RegistrationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black26,
         title: Text(widget.title),
       ),
       body: Column(
@@ -30,10 +31,9 @@ class _MyRegistrationPageState extends State<RegistrationPage> {
                 decoration: BoxDecoration(
                   border: Border.all(width: 15, color: Colors.black38),
                   image: new DecorationImage(
-                    image: new AssetImage("Background/singup.png"),
+                    fit: BoxFit.fitWidth,
+                    image: new AssetImage("Background/signup.png"),
                   ),
-                  borderRadius: const BorderRadius.all(
-                      const Radius.circular(8)),
                 ),
               ),
             ),
@@ -43,8 +43,19 @@ class _MyRegistrationPageState extends State<RegistrationPage> {
             child: Expanded(
               flex: 3,
               child: Container(
+                  child: Stack(
+                    children: <Widget>[
+                      TextField(
 
+                      ),
+                      TextField(
 
+                      ),
+                      TextField(
+
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
