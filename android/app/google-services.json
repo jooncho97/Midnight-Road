@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "131310395689",
+    "firebase_url": "https://midnight-road.firebaseio.com",
+    "project_id": "midnight-road",
+    "storage_bucket": "midnight-road.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:131310395689:android:51f655b4328899e6291738",
+        "android_client_info": {
+          "package_name": "eduhanjooncho.cpp.midnight_road"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "131310395689-qotiterl12sb91bd5e49n7q9vtdfgrgr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBunKj4OGSFHMfFSuavFDWHkuFQQbMDHSQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "131310395689-qotiterl12sb91bd5e49n7q9vtdfgrgr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

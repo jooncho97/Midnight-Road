@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class RegistrationPage extends StatefulWidget {
   RegistrationPage({Key key, this.title}) : super(key: key);
@@ -9,7 +12,12 @@ class RegistrationPage extends StatefulWidget {
   _MyRegistrationPageState createState() => _MyRegistrationPageState();
 }
 
+
 class _MyRegistrationPageState extends State<RegistrationPage> {
+
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final formKey = GlobalKey<FormState>();
+  String email, password;
 //THIS CONTROLS THE UI
   @override
   Widget build(BuildContext context) {
@@ -43,23 +51,57 @@ class _MyRegistrationPageState extends State<RegistrationPage> {
             child: Expanded(
               flex: 3,
               child: Container(
-                  child: Stack(
-                    children: <Widget>[
-                      TextField(
-
-                      ),
-                      TextField(
-
-                      ),
-                      TextField(
-
-                      ),
-                    ],
+                  child: Form(
+                    key: formKey,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        TextFormField(
+                          decoration: InputDecoration(
+                            labelText: 'Email'
+                          ),
+                          validator: (input) => !input.contains('@') ? "Not a valid email address" : null,
+                          onSaved: (input) => email = input,
+                        ),
+                        TextFormField(
+                          decoration: InputDecoration(
+                            labelText: 'Password'
+                            ),
+                            validator: (input) => input.length < 6 ? "You need a password that's longer than 6 characters" : null,
+                            onSaved: (input) => password = input,
+                            obscureText: true,
+                        ),
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: <Widget>[
+                              Padding(
+                               padding: const EdgeInsets.all(9.0),
+                               child: RaisedButton(
+                                 onPressed: submit,
+                                 child: Text('Submit'),
+                               )
+                              )
+                            ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
             ),
           ]),
     );
+  }
+  void submit(){
+    if (formKey.currentState.validate()) {
+      formKey.currentState.save();
+      _auth.createUserWithEmailAndPassword(email: email, password: password)
+      .then((value){
+          print("Sucessful " + value.user.email);
+      })
+      .catchError((e) {
+          print("Failed." + e.toString());
+      });
+    }
   }
 }
