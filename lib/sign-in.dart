@@ -5,7 +5,6 @@ import 'package:midnight_road/home.dart';
 import 'package:midnight_road/Services/user_auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class SignInPage extends StatefulWidget {
   SignInPage({Key key, this.title,this.auth,this.loginCallback}) : super(key: key);
