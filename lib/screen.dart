@@ -1,6 +1,5 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class RegistrationPage extends StatefulWidget {
@@ -16,6 +15,7 @@ class RegistrationPage extends StatefulWidget {
 class _MyRegistrationPageState extends State<RegistrationPage> {
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  final DatabaseReference ref = FirebaseDatabase.instance.reference();
   final formKey = GlobalKey<FormState>();
   String email, password;
 //THIS CONTROLS THE UI
@@ -33,13 +33,13 @@ class _MyRegistrationPageState extends State<RegistrationPage> {
           Container(
             //Creating an expanded to scale the widget's size
             child: Expanded(
-              flex: 2,
+              flex: 4,
               //creating a child to import images
               child: Container(
                 decoration: BoxDecoration(
                   border: Border.all(width: 15, color: Colors.black38),
                   image: new DecorationImage(
-                    fit: BoxFit.fitWidth,
+                    fit: BoxFit.fill,
                     image: new AssetImage("Background/signup.png"),
                   ),
                 ),
@@ -49,7 +49,7 @@ class _MyRegistrationPageState extends State<RegistrationPage> {
           //CONTAINER 2
           Container(
             child: Expanded(
-              flex: 3,
+              flex: 2,
               child: Container(
                   child: Form(
                     key: formKey,
@@ -72,6 +72,7 @@ class _MyRegistrationPageState extends State<RegistrationPage> {
                             obscureText: true,
                         ),
                         Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: <Widget>[
                               Padding(
@@ -97,7 +98,13 @@ class _MyRegistrationPageState extends State<RegistrationPage> {
       formKey.currentState.save();
       _auth.createUserWithEmailAndPassword(email: email, password: password)
       .then((value){
-          print("Sucessful " + value.user.email);
+        //creating a user and storing in the database with the UID
+            ref.child("Users" + new DateTime.now().millisecondsSinceEpoch.toString()).set(
+                {
+                  "Email": email,
+                  "Password": password,
+                }
+            );
       })
       .catchError((e) {
           print("Failed." + e.toString());

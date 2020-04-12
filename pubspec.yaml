@@ -17,7 +17,9 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 #this is FOR ADDING DIFFERENT DEPENDENCY FROM THIRD PARTY LIBRARIES LIKE FIREBASE, ML,
 dependencies:
+  google_fonts: ^0.4.0
   fancy_bottom_navigation: ^0.3.2
+  firebase_database: ^3.1.0
   flutter:
     sdk: flutter
 
@@ -46,6 +48,7 @@ flutter:
 
   assets:
     - Background/back.png
+    - Background/test.jpg
     - Background/Logo.png
     - Background/Streetshabit.png
     - Background/zociety.png

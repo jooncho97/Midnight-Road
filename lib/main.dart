@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:midnight_road/sign-in.dart';
 import 'screen.dart';
 void main() => runApp(MyApp());
 
@@ -67,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed:(){
                   Navigator.push(
                     context,
-                    new MaterialPageRoute(builder: (context) => new RegistrationPage(title: 'registration page')),
+                    new MaterialPageRoute(builder: (context) => new SignInPage(title: 'Sign In Page')),
                   );
                 }),
               ),

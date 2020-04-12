@@ -1,19 +1,22 @@
-import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:midnight_road/Services/user_auth.dart';
 import 'screen.dart';
 
-void main() {
-  runApp(
-    MainScreen()
-  );
+class Home extends StatefulWidget {
+  Home({Key key})
+      : super(key: key);
+
+  @override
+  HomeScreen createState() => HomeScreen();
 }
-class MainScreen extends StatelessWidget {
+class HomeScreen extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         //part of the scaffold properties
-          appBar: AppBar(
+        appBar: AppBar(
             title: Text("Events"),
             backgroundColor: Colors.orange,
           ),
@@ -31,7 +34,7 @@ class MainScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                         border: Border.all(width: 15, color: Colors.black38),
                         image: new DecorationImage(
-                          image: new AssetImage("Background/unique.png"),
+                          image: new AssetImage("Background/back.png"),
                         ),
                         borderRadius: const BorderRadius.all(
                             const Radius.circular(8)),
