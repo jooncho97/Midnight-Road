@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:midnight_road/event_detail.dart';
 class Home extends StatefulWidget {
   Home({Key key})
       : super(key: key);
@@ -9,6 +9,7 @@ class Home extends StatefulWidget {
 }
 class HomeScreen extends State<Home> {
   @override
+  int _selectedIndex = 0;
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
@@ -31,7 +32,7 @@ class HomeScreen extends State<Home> {
                       decoration: BoxDecoration(
                         border: Border.all(width: 15, color: Colors.black38),
                         image: new DecorationImage(
-                          image: new AssetImage("Background/back.png"),
+                          image: new AssetImage("Background/unique.png"),
                         ),
                         borderRadius: const BorderRadius.all(
                             const Radius.circular(8)),
@@ -44,7 +45,13 @@ class HomeScreen extends State<Home> {
                           mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           FloatingActionButton(
-                            onPressed:(){},
+                            onPressed:(){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Event(text: 'Unique',event_ID: 0,),
+                                  ));
+                            },
                             backgroundColor: Colors.orange,
                             child: Icon(Icons.add),
                           ),
@@ -105,7 +112,34 @@ class HomeScreen extends State<Home> {
                 ),
               ),
             ]),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              title: Text('Home'),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.directions_car),
+              title: Text('Meets'),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle),
+              title: Text('Account'),
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.amber[800],
+          onTap: _onItemTapped,
+        ),
       ),
     );
+  }
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+      if(_selectedIndex == 1){
+        print("");
+      }
+    });
   }
 }

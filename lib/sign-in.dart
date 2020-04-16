@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:midnight_road/home.dart';
 import 'package:midnight_road/Services/user_auth.dart';
@@ -82,6 +81,7 @@ class _SignInPageState extends State<SignInPage> {
                                         labelText: 'Password',
                                         labelStyle: TextStyle(color: Colors.white),
                                       ),
+                                      style: new TextStyle(color: Colors.white),
                                     ),
                                   ),
                                   Container(
