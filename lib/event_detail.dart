@@ -36,7 +36,7 @@ class EventScreen extends State<Event> {
               child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
-                      Divider(height: 30),
+                      Divider(height: 25),
                       RichText(
                         text: TextSpan(
                           style: Theme.of(context).textTheme.body1,
@@ -55,7 +55,7 @@ class EventScreen extends State<Event> {
                           ],
                         ),
                       ),
-                      Divider(height: 30),
+                      Divider(height: 25),
                       RichText(
                         text: TextSpan(
                           style: Theme.of(context).textTheme.body1,
@@ -74,7 +74,7 @@ class EventScreen extends State<Event> {
                           ],
                         ),
                       ),
-                      Divider(height: 30),
+                      Divider(height: 25),
                       RichText(
                         textAlign: TextAlign.center,
                         text: TextSpan(
