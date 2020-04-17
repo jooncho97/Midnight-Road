@@ -49,7 +49,7 @@ class HomeScreen extends State<Home> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => Event(text: 'Unique',event_ID: 0,),
+                                    builder: (context) => Event(text: 'Unique',event_ID: 0,location: 'Inglewood, CA',description: unique,),
                                   ));
                             },
                             backgroundColor: Colors.orange,
@@ -134,6 +134,9 @@ class HomeScreen extends State<Home> {
       ),
     );
   }
+  final String unique = "Unique Society \n Prez : @blackdragon_3.7 \n Want to join ? we are now recruiting hmu for info 💯🏎 "+
+      "\n Sponsor: \n@selfcaredetailing_ \n@aaservices4you \n@tigg_vhr";
+  final String SF = " ";
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;

@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Event extends StatefulWidget {
   final String text;
+  final String location;
+  final String description;
   final int event_ID;
-  Event({Key key, this.text, this.event_ID})
+  Event({Key key, this.text, this.location,this.description, this.event_ID})
       : super(key: key);
 
   int get ID => event_ID;
   String get event_title => text;
+  String get location_title => location;
   @override
   EventScreen createState() => EventScreen();
 }
@@ -29,16 +33,74 @@ class EventScreen extends State<Event> {
           Container(
             child: Expanded(
               flex: 3,
-              child: Container(
-                  child: Text(
-                      "here it is",
+              child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      Divider(height: 30),
+                      RichText(
+                        text: TextSpan(
+                          style: Theme.of(context).textTheme.body1,
+                          children: [
+                            WidgetSpan(
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                                child: Icon(Icons.flag),
+                              ),
+                            ),
+                            TextSpan(text:'Team Name: ' + widget.text,
+                                style: GoogleFonts.caveat(
+                                  fontSize: 30.0,
+                                  fontWeight: FontWeight.w400,
+                                )),
+                          ],
+                        ),
+                      ),
+                      Divider(height: 30),
+                      RichText(
+                        text: TextSpan(
+                          style: Theme.of(context).textTheme.body1,
+                          children: [
+                            WidgetSpan(
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                                child: Icon(Icons.place),
+                              ),
+                            ),
+                            TextSpan(text:'Location: ' + widget.location,
+                              style: GoogleFonts.caveat(
+                                fontSize: 30.0,
+                                fontWeight: FontWeight.w400,
+                              )),
+                          ],
+                        ),
+                      ),
+                      Divider(height: 30),
+                      RichText(
+                        textAlign: TextAlign.center,
+                        text: TextSpan(
+                          style: Theme.of(context).textTheme.body1,
+                          children: [
+                            WidgetSpan(
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                                child: Icon(Icons.comment),
+                              ),
+                            ),
+                            TextSpan(text:'Description: ' + widget.description,
+                                style: GoogleFonts.caveat(
+                                  fontSize: 25.0,
+                                  fontWeight: FontWeight.w400,
+                                )),
+                          ],
+                        ),
+                      ),
+                      //MAYBE ADD IMAGES HERE FOR INDIVIDUAL TEAM
+                    ],
                   ),
               ),
             ),
-          ),
         ],
       ),
-
     );
   }
   Widget type_event(){
