@@ -88,7 +88,7 @@ class EventScreen extends State<Event> {
                             ),
                             TextSpan(text:'Description: ' + widget.description,
                                 style: GoogleFonts.caveat(
-                                  fontSize: 25.0,
+                                  fontSize: 23.5,
                                   fontWeight: FontWeight.w400,
                                 )),
                           ],

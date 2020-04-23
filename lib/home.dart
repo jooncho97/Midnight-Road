@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:midnight_road/event_detail.dart';
+import 'package:midnight_road/google-map.dart';
 class Home extends StatefulWidget {
   Home({Key key})
       : super(key: key);
@@ -270,7 +271,11 @@ class HomeScreen extends State<Home> {
       if(_selectedIndex == 0){
         print("home screen");
       }else if(_selectedIndex == 1){
-        print("meets");
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => GoogleMapPage(title: 'Carwash Near You'),
+            ));
       }else if(_selectedIndex == 2){
         print("accounts");
       }
@@ -289,5 +294,5 @@ class HomeScreen extends State<Home> {
   final String zociety = "ZOCIETY™ \n" + "We Are Enthu•Z•Asts, United We Are A ZOCIETY! \n" + "Worldwide Z Family🌍 \n"+
   "#ZOCIETY \n" + "↘Join The ZOCIETY↙ \n" + "www.ZOCIETY.org \n";
   final String street = "TheStreetHabitsCo™ \n" + "🏆NOW RECRUITING SOLO RIDERS🏆 \n" +  "- SoCal/NorCal Based📍 \n" + "- SHOW / 1320 / TRACK🏎 \n" +
-      "- UpComing Shows🎢: \n" + "June 20th, 2020 \n" + "SpringBlastAutofest \n" + "↘️Buy Tickets↙️ \n" + "www.thestreethabitsco.shop";
+       "↘️Buy Tickets↙️ \n" + "www.thestreethabitsco.shop";
 }

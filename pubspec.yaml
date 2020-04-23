@@ -34,6 +34,8 @@ dev_dependencies:
   # Add the dependency for the Firebase Core Flutter SDK
   firebase_core: ^0.4.0+9
   firebase_auth: ^0.14.0+5
+  google_maps_flutter: ^0.5.26+2
+  flutter_google_places: ^0.2.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
