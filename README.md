@@ -1,12 +1,33 @@
-# midnight_road
+# Lifetrakr - App landing page template
 
-For Car enthusiast
+Lifetrakr is a bootstrap based responsive & Free app landing page template. The HTML/CSS theme is perfectly suited for those who want to set out their mobile app marketing seamlessly. Perfectly optimized for details app presentation and conversion. So, Having an awesome Android & IOS apps, want to boost it total download rate and earn money for add and advertisement, go for Lifehacker.
 
-Description: 
-Have you ever experienced the feeling of emptiness while driving through the intersection at midnight with no other cars nearby? Well, if you're a true car enthusiasts, this happens often. The exuberant feeling of the exhaust rumble while waiting for signal to turn green is exciting, but you don't need to be alone anymore. This app will allow you to connect with other fellow drivers by showing events, car wash, and profiles. Why not make a crew today? Join the movement, Midnight Road!
+<img src="https://cloud.githubusercontent.com/assets/10640964/5989280/2eb3073a-a9ac-11e4-9fc9-7aad4e98c35d.jpg" alt="Free bootstrap app landing page template by themefisher">
 
-<img src= "https://lh3.googleusercontent.com/WIbEI1v4sUVu85MWAcvQ_JRpBonOCHxqeUFJbYhht1UDaI6QUdAmk_P-2-KQhXz3VxkF=w2608-h1532-rw"                 alt="/Screenshots/Phone%20Screenshot%201.jpg" height="690" width="420">
+**NOTE:** Please remember to **STAR** this project and **FOLLOW** [my Github](https://github.com/themefisher) to keep you update with this template.
 
-<img src= "https://lh3.googleusercontent.com/dCQ4DoiR6hqBdycQ8eSNNBCPHlju7CVZYpjpoO48Rme3dSB_L79pjI8Q-JpUoDSIUSw=w2608-h1532-rw"                 alt="/Screenshots/Phone%20Screenshot%202.jpg" height="690" width="420">
+## Demo & Download 
 
-<img src= "https://lh3.googleusercontent.com/dMRtjT5p8TWFdVIMniwnvYf7TbCEjydE4lGxLWaIFP4vnSc43QWpMprx2UGVwGhHzmU=w2608-h1532-rw"                 alt="/Screenshots/Phone%20Screenshot%203.jpg" height="690" width="420">
+A fully functional demo is available at <a href="http://demo.themefisher.com/demos/?theme=lifetrakr">Demo</a>
+You can visit our website to download this theme <a href="https://themefisher.com/products/lifetrakr-free-app-landing-page-template/">Download Now</a>
+ 
+
+
+## Bugs Reports
+
+Have a bug or a feature request? Please open a new issue.
+
+## Copyright and license
+
+Copyright 2017 themefisher.com, <a target="_blank" href="https://themefisher.com/license">License</a>
+
+## Support Themefisher Development
+This template is a MIT licensed open source project and completely free to use. However, the amount of effort needed to maintain and develop new features for the project is not sustainable without proper financial backing. You can support development by buying one of our [premium templates](https://themefisher.com/premium-templates/).
+
+
+### Check out our FREE Bootstrap & HTML5 Templates
+Get More FREE Bootstrap templates from our store <a href="https://themefisher.com/free-bootstrap-templates">Bootstrap Templates Store</a>
+And if you want FREE HTML5 Templates then please visit our listing content <a href="https://themefisher.com/best-free-html5-templates-2016/">HTML5 Templates</a>
+Visit Our Website For More Amazing Works
+<a href="https://themefisher.com">Website</a>
+
