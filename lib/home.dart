@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:midnight_road/event_detail.dart';
 import 'package:midnight_road/google-map.dart';
+import 'package:midnight_road/Services/user_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:midnight_road/main.dart';
 class Home extends StatefulWidget {
   Home({Key key})
       : super(key: key);
-
   @override
   HomeScreen createState() => HomeScreen();
 }
 class HomeScreen extends State<Home> {
+  final FirebaseAuth _user = FirebaseAuth.instance;
   @override
   int _selectedIndex = 0;
   Widget build(BuildContext context) {
@@ -17,6 +20,18 @@ class HomeScreen extends State<Home> {
         //part of the scaffold properties
         appBar: AppBar(
             title: Text("Events"),
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(Icons.exit_to_app),
+                onPressed: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MyHomePage(title:'Midnight Road'),
+                      ));
+                },
+              )
+            ],
             backgroundColor: Colors.orange,
           ),
         body: CustomScrollView(
@@ -58,13 +73,13 @@ class HomeScreen extends State<Home> {
                                     ));
                               },
                               backgroundColor: Colors.orange,
-                              child: Icon(Icons.add),
+                              child: Icon(Icons.arrow_forward),
                             ),
                           ),
                         ]),
                       ),
                     ),
-                   Container(
+                    Container(
                      decoration: BoxDecoration(
                        border: Border.all(width: 15, color: Colors.black38),
                        image: new DecorationImage(
@@ -93,7 +108,7 @@ class HomeScreen extends State<Home> {
                                        ));
                                  },
                                  backgroundColor: Colors.orange,
-                                 child: Icon(Icons.add),
+                                 child: Icon(Icons.arrow_forward),
                                ),
                              ),
                            ]),
@@ -128,7 +143,7 @@ class HomeScreen extends State<Home> {
                                         ));
                                   },
                                   backgroundColor: Colors.orange,
-                                  child: Icon(Icons.add),
+                                  child: Icon(Icons.arrow_forward),
                                 ),
                               ),
                             ]),
@@ -163,7 +178,7 @@ class HomeScreen extends State<Home> {
                                         ));
                                   },
                                   backgroundColor: Colors.orange,
-                                  child: Icon(Icons.add),
+                                  child: Icon(Icons.arrow_forward),
                                 ),
                               ),
                             ]),
@@ -198,7 +213,7 @@ class HomeScreen extends State<Home> {
                                         ));
                                   },
                                   backgroundColor: Colors.orange,
-                                  child: Icon(Icons.add),
+                                  child: Icon(Icons.arrow_forward),
                                 ),
                               ),
                             ]),
@@ -233,7 +248,7 @@ class HomeScreen extends State<Home> {
                                         ));
                                   },
                                   backgroundColor: Colors.orange,
-                                  child: Icon(Icons.add),
+                                  child: Icon(Icons.arrow_forward),
                                 ),
                               ),
                             ]),
@@ -274,7 +289,7 @@ class HomeScreen extends State<Home> {
         Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => GoogleMapPage(title: 'Carwash Near You'),
+              builder: (context) => GoogleMapPage(title: 'Event Near You'),
             ));
       }else if(_selectedIndex == 2){
         print("accounts");

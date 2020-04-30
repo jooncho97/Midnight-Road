@@ -6,10 +6,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 
 class SignInPage extends StatefulWidget {
-  SignInPage({Key key, this.title,this.auth,this.loginCallback}) : super(key: key);
+  SignInPage({Key key, this.title,this.auth}) : super(key: key);
   final BaseAuth auth;
-  final VoidCallback loginCallback;
-
   final String title;
   //ARROW SPECIFIES or similar to lambda WHICH RETURNS MYHOMEPAGESTATE
   @override
@@ -18,7 +16,6 @@ class SignInPage extends StatefulWidget {
 
 
 class _SignInPageState extends State<SignInPage> {
-
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final DatabaseReference ref = FirebaseDatabase.instance.reference();
   final formKey = GlobalKey<FormState>();
@@ -88,7 +85,7 @@ class _SignInPageState extends State<SignInPage> {
                                     padding: EdgeInsets.all(10),
                                     child: Text(
                                       "Forgot Password?",
-                                      style: TextStyle(color: Colors.white),
+                                      style: TextStyle(color: Colors.black),
                                     ),
                                   ),
                                   RaisedButton(
@@ -103,31 +100,16 @@ class _SignInPageState extends State<SignInPage> {
                 )),
           ],
         ),
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.transparent,
-        shape: const CircularNotchedRectangle(),
-        child: Container(
-          height: 50.0,
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => setState(() {
-        }),
-        tooltip: 'Next',
-        backgroundColor: Colors.orange,
-        child: Icon(Icons.arrow_forward),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     )
     ;
   }
   void validate(){
     try {
       _auth.signInWithEmailAndPassword(email: emailEditController.text.toString(), password: pwEditController.text.toString()).then((value){
-      Navigator.push(
+        Navigator.push(
         context,
-        new MaterialPageRoute(builder: (context) => new Home()),
-      );});
+        new MaterialPageRoute(builder: (context) => new Home(),));
+      });
     }catch(e){
       print("couldn't be retieved"+e.toString());
     }

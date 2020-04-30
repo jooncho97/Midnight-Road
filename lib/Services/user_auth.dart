@@ -6,7 +6,7 @@ Future<String> signIn(String email, String password);
 
 Future<String> signUp(String email, String password);
 
-Future<FirebaseUser> getCurrentUser();
+Future<String> getCurrentUserID();
 
 Future<void> sendEmailVerification();
 
@@ -38,9 +38,10 @@ class Auth implements BaseAuth {
     return user.uid;
   }
 
-  Future<FirebaseUser> getCurrentUser() async {
+  Future<String> getCurrentUserID() async {
     FirebaseUser user = await _firebaseAuth.currentUser();
-    return user;
+    final u_id = user.uid;
+    return u_id;
   }
 
   Future<void> signOut() async {

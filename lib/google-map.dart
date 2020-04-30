@@ -21,7 +21,9 @@ class GoogleMapPageState extends State<GoogleMapPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Meet Location"),),
+      appBar: AppBar(title: Text("Meet Location"),
+          backgroundColor: Colors.orange,
+        ),
       body: Stack(
         children: <Widget>[
           gMaps(context),
@@ -68,7 +70,7 @@ class GoogleMapPageState extends State<GoogleMapPage> {
             Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: box(1,
-                    33.8336192,-118.4211491,'SteerFresh'
+                    33.8038229,-118.3302037,'SteerFresh'
                 )
             ),
             SizedBox(width: 10.0),

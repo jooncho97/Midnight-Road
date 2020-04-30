@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-              new Container(
+              Container(
               child: new FlatButton(
                 child: new Container(
                   padding: new EdgeInsets.only(
@@ -72,7 +72,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   );
                 }),
               ),
-            new Container(
+            SizedBox(height: 10),
+            Container(
               child: new FlatButton(
                   child: new Container(
                     padding: new EdgeInsets.only(
@@ -91,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     child: new Text('Create an Account',
-                      style: new TextStyle(fontSize: 20.0, color: Colors.white),
+                      style: new TextStyle(fontSize: 20.0, color: Colors.black54),
                     ),
                   ),
                   onPressed:(){
@@ -101,6 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     );
                   }),
             ),
+            SizedBox(height: 90),
             ]
             ),
         ),

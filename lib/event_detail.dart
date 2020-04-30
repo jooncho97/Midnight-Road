@@ -21,7 +21,9 @@ class EventScreen extends State<Event> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppBar(title: Text("event detail")),
+      appBar: AppBar(title: Text("event detail"),
+        backgroundColor: Colors.orange,
+      ),
       body: Column(
         children: <Widget>[
           Container(
